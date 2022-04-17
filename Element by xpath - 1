@@ -1,0 +1,32 @@
+2. Login to the website  https://ui.cogmento.com/ and go to contacts and add a contact
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+s = Service("C:/Users/Arpana/PycharmProjects/LearnSelenium/drivers/chromedriver.exe")
+driver = webdriver.Chrome(service=s)
+driver.get("https://ui.cogmento.com/")
+time.sleep(5)
+driver.maximize_window()
+driver.find_element_by_name("email").send_keys("arpanad@gmail.com")
+driver.find_element_by_name("password").send_keys("456Password")
+driver.find_element(By.XPATH,"//div[text()='Login']").click()
+time.sleep(5)
+#import pdb; pdb.set_trace()
+driver.find_element(By.XPATH,"//i[@class='home icon']")
+driver.find_element(By.XPATH,"//span[text()='Contacts']").click()
+time.sleep(2)
+driver.find_element(By.XPATH,"(//button[@class='ui linkedin button'])[3]").click()
+driver.find_element_by_name("first_name").send_keys("Arpu")
+driver.find_element_by_name("middle_name").send_keys("M")
+driver.find_element_by_name("last_name").send_keys("D")
+driver.find_element(By.XPATH,"(//input[@name='value'])[1]").send_keys("arpanadandin@gmail.com")
+driver.find_element(By.XPATH,"//input[@name='address']").send_keys("Gandhinagar")
+driver.find_element(By.XPATH,"//input[@name='city']").send_keys("Bangalore")
+driver.find_element(By.XPATH,"//input[@name='state']").send_keys("Karnataka")
+driver.find_element(By.XPATH,"//input[@name='zip']").send_keys("560000")
+driver.find_element(By.XPATH,"//button[@class='ui linkedin button']").click()
+driver.find_element(By.XPATH,"(//i[@class='settings icon'])[1]").click()
+driver.find_element(By.XPATH,"//span[text()='Log Out']").click()
