@@ -1,4 +1,4 @@
-1. Fill the registration form on the website https://demo.guru99.com/test/newtours/register.php
+#Fill the registration form on the website https://demo.guru99.com/test/newtours/register.php
 
 import time
 from selenium import webdriver
