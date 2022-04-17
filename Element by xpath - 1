@@ -1,4 +1,4 @@
-2. Login to the website  https://ui.cogmento.com/ and go to contacts and add a contact
+#Login to the website  https://ui.cogmento.com/ and go to contacts and add a contact
 
 import time
 from selenium import webdriver
