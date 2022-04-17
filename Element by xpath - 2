@@ -1,6 +1,4 @@
-3. Login to the website https://www.saucedemo.com/. Add items to the cart and checkout. Post that logout.
-
-
+#Login to the website https://www.saucedemo.com/. Add items to the cart and checkout. Post that logout.
 
 import time
 from selenium import webdriver
