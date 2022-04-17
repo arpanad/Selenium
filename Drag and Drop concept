@@ -1,0 +1,24 @@
+#Login to the website https://www.demo.guru99.com/test/drag_drop.html. Perform drag and drop at the credit and debit side.
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver import ActionChains
+
+s = Service("C:/Users/Arpana/PycharmProjects/LearnSelenium/drivers/chromedriver.exe")
+driver = webdriver.Chrome(service=s)
+driver.get("https://www.demo.guru99.com/test/drag_drop.html")
+driver.maximize_window()
+time.sleep(2)
+from_ele1 = driver.find_element(By.XPATH, "//li[@id='credit0']/preceding-sibling::li[1]")
+to_ele1 = driver.find_element_by_id('amt8')
+ActionChains(driver).drag_and_drop(from_ele1, to_ele1).click().perform()
+to_ele2 = driver.find_element_by_id('amt7')
+ActionChains(driver).drag_and_drop(from_ele1, to_ele2).click().perform()
+from_ele2 = driver.find_element_by_id('credit2')
+to_ele3 = driver.find_element_by_id('bank')
+ActionChains(driver).drag_and_drop(from_ele2, to_ele3).click().perform()
+from_ele3 = driver.find_element_by_id('credit1')
+to_ele4 = driver.find_element_by_id('loan')
+ActionChains(driver).drag_and_drop(from_ele3, to_ele4).click().perform()
