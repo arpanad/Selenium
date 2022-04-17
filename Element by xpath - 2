@@ -1,0 +1,31 @@
+3. Login to the website https://www.saucedemo.com/. Add items to the cart and checkout. Post that logout.
+
+
+
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+
+s = Service("C:/Users/Arpana/PycharmProjects/LearnSelenium/drivers/chromedriver.exe")
+driver = webdriver.Chrome(service=s)
+driver.get("https://www.saucedemo.com/")
+time.sleep(5)
+driver.maximize_window()
+driver.find_element_by_id('user-name').send_keys('standard_user')
+driver.find_element_by_name('password').send_keys('secret_sauce')
+driver.find_element(By.XPATH, "//input[@value='Login']").click()
+driver.find_element(By.XPATH, "//button[@id='add-to-cart-sauce-labs-backpack']").click()
+driver.find_element(By.XPATH, "//button[@id='add-to-cart-sauce-labs-onesie']").click()
+driver.find_element_by_class_name('shopping_cart_link').click()
+driver.find_element(By.XPATH,"//button[text()='Checkout']").click()
+driver.find_element_by_id('first-name').send_keys('Arpu')
+driver.find_element_by_id('last-name').send_keys('Dandin')
+driver.find_element_by_id('postal-code').send_keys('560098')
+driver.find_element(By.XPATH, "//button[@id='cancel']/following::input").click()
+driver.find_element(By.XPATH, "//button[@id='cancel']/following::button").click()
+driver.find_element(By.XPATH, "//button[text()='Back Home']").click()
+driver.find_element(By.XPATH,"//button[text()='Open Menu']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[text()='All Items']/following-sibling::a[2]").click()
+driver.close()
