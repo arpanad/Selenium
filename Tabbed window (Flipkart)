@@ -1,0 +1,23 @@
+import time
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+
+s = Service("C:/Users/Arpana/PycharmProjects/LearnSelenium/drivers/chromedriver.exe")
+driver = webdriver.Chrome(service=s)
+driver.get("https://www.flipkart.com/")
+driver.maximize_window()
+time.sleep(2)
+driver.find_element(By.XPATH, "//button[@class='_2KpZ6l _2doB4z']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//input[@type='text']").send_keys("Watches for girls")
+driver.find_element(By.XPATH, "//button[@type='submit']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "(//div[@class='_3ywSr_'])[8]").click()
+handle1 = driver.window_handles
+driver.switch_to.window(handle1[1])
+driver.find_element(By.XPATH, "(//li[@class='col col-6-12'])[1]").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[text()='Place Order']").click()
+driver.close()
