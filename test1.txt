@@ -1,2 +1,2 @@
 Test message for feature branch
-Add new line to feature branch
+Add a new line
